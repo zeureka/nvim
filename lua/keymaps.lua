@@ -6,24 +6,12 @@ local function map(mode, lhs, rhs, opts)
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
--- Vim for Colemak
-map('', 'n', 'j', {})
-map('', 'e', 'k', {})
-map('', 'i', 'l', {})
-map('', 'j', 'e', {})
-map('', 'k', 'n', {})
-map('', 'l', 'i', {})
-map('', 'K', 'N', {})
-map('', 'N', '5j', {})
-map('', 'E', '5k', {})
-map('', 'L', 'I', {})
-
-map('', 'H', '0', {})
-map('', 'I', '$', {})
+map('', 'J', '5j', {})
+map('', 'K', '5k', {})
 
 -- Shortcut for quiting and saving
-map('', 'Q', ':q<cr>', {})
-map('', 'S', ':w<cr>', {})
+-- map('', 'Q', ':q<cr>', {})
+-- map('', 'S', ':w<cr>', {})
 
 -- About buffers
 map('n', ',,', '<cmd>sp term://${SHELL}<cr><c-w>x<c-w>w', {})
@@ -66,3 +54,7 @@ map("n", "<leader>fm", "<cmd>Telescope marks theme=dropdown<CR>", {})
 -- -- Terminal
 map("n", "<C-t>", "<cmd>term<CR>", {})
 map("t", "<Esc>", "<C-\\><C-n>", {})
+
+-- -- VIM Table Mode(markdown)
+-- 打开/关闭插件
+map("n", "<leader>tm", ":TableModeToggle<CR>", {})

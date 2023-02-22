@@ -26,16 +26,14 @@ return require('packer').startup(function()
 	use 'hrsh7th/cmp-path'
 	use 'hrsh7th/cmp-nvim-lua'
 
-    -- Rust
-    use {
-        'simrat39/rust-tools.nvim',
-        config = function ()
-            require('conf.rust-tools-conf')
-        end
-    }
-
     -- Markdown Preview
 	use 'iamcco/markdown-preview.nvim'
+
+    -- Markdown 表格生成
+    use 'dhruvasagar/vim-table-mode'
+    
+    -- auto pairs
+    use 'jiangmiao/auto-pairs'
 
     -- lspsaga beautify the windows of lsp
 	use {
@@ -110,7 +108,8 @@ return require('packer').startup(function()
 			require('nvim-tree').setup{}
 		end
 	}
-
+    
+    -- themes
     use {
         'folke/tokyonight.nvim',
     }
