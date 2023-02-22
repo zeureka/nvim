@@ -1,9 +1,9 @@
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+    local options = { noremap = true, silent = true }
+    if opts then
+        options = vim.tbl_extend("force", options, opts)
+    end
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
 map('', 'J', '5j', {})
@@ -18,28 +18,30 @@ map('n', ',,', '<cmd>sp term://${SHELL}<cr><c-w>x<c-w>w', {})
 map('n', '<leader>[]', '<cmd>tabedit<cr>', {})
 map('n', '{', '<cmd>bp<cr>', {})
 map('n', '}', '<cmd>bn<cr>', {})
-map('n', 'tx', '<cmd>bd<cr>', {})
+map('n', 'tx', '<cmd>bd<cr><cmd>bp<cr>', {})
 
 -- Quickly edit the configuration
-map('n', '<leader>fs', '<cmd>tabedit ~/.config/nvim/lua/plugins.lua<cr>', {})
+map('n', '<leader>fs', '<cmd>tabedit ~/.config/nvim/<cr>', {})
 
 -- Copy and Past from the system clipboard
 map('v', 'Y', '"+y', {})
 map('n', 'P', '"+p', {})
 
 -- Some functional configuration
-map('n', '<backspace>', '<cmd>noh<cr>', {})		-- cancel highlight that from search
-map('n', '<space>', 'viw', {})				-- select a word
-map('n', '-', '@q', {})						-- play the macro 'q'
+map('n', '<backspace>', '<cmd>noh<cr>', {}) -- cancel highlight that from search
+map('n', '<space>', 'viw', {}) -- select a word
+map('n', '-', '@q', {}) -- play the macro 'q'
+map('n', '<c-a>', 'gg<s-v>G', {}) -- select all
+map('n', 'f', '<c-w>w', {}) -- change window
+map('n', '<leader>s', '<cmd>vsplit<cr><c-w>w', {})
 
 -- -- NvimTree
 -- Open NvimTree
-map("n", "<leader>t", "<cmd>NvimTreeToggle<CR>", {});
-map("n", "<leader>f", "<cmd>NvimTreeFocus<CR>", {});
+map("n", "<c-e>", "<cmd>NvimTreeToggle<CR>", {});
 
 -- -- Telescope
 -- Find file
-map("n", "<leader>ff", "<cmd>Telescope find_files theme=dropdown<CR>", {})
+map("n", "<c-f>", "<cmd>Telescope find_files theme=dropdown<CR>", {})
 -- Find word
 map("n", "<leader>fg", "<cmd>Telescope live_grep theme=dropdown<CR>", {})
 -- Find special sample
@@ -52,7 +54,7 @@ map("n", "<leader>fo", "<cmd>Telescope oldfiles theme=dropdown<CR>", {})
 map("n", "<leader>fm", "<cmd>Telescope marks theme=dropdown<CR>", {})
 
 -- -- Terminal
-map("n", "<C-t>", "<cmd>term<CR>", {})
+map("n", "<C-t>", "<cmd>FloatermToggle<CR>", {})
 map("t", "<Esc>", "<C-\\><C-n>", {})
 
 -- -- VIM Table Mode(markdown)
