@@ -64,5 +64,7 @@ return {
     end
   },
   { 'voldikss/vim-floaterm' },
-  { 'iamcco/markdown-preview.nvim' }
+  { 'dhruvasagar/vim-table-mode' },
+  { 'iamcco/markdown-preview.nvim' },
+  { 'jiangmiao/auto-pairs' }
 }
