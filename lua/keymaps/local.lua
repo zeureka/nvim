@@ -6,6 +6,9 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+map('', 'J', '5j', {})
+map('', 'K', '5k', {})
+
 -- Copy and Past from the system clipboard
 map('v', 'Y', '"+y', {})
 map('n', 'P', '"+p', {})
@@ -42,3 +45,6 @@ map("t", "<Esc>", "<C-\\><C-n>", {})
 
 -- Terminal
 map("n", "<C-t>", "<cmd>FloatermToggle<CR>", {})
+
+-- VIM Table Mode
+map("n", "<leader>tm", ":TableModeToggle<CR>", {})
