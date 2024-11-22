@@ -29,7 +29,7 @@ map("n", "<c-e>", "<cmd>NvimTreeToggle<CR>", {});
 -- Find file
 map("n", "<c-f>", "<cmd>Telescope find_files theme=dropdown<CR>", {})
 -- Find word
-map("n", "<leader>fg", "<cmd>Telescope live_grep theme=dropdown<CR>", {})
+map("n", "<leader>fw", "<cmd>Telescope live_grep theme=dropdown<CR>", {})
 -- Find special sample
 map("n", "<leader>fb", "<cmd>Telescope buffers theme=dropdown<CR>", {})
 -- check help doc
@@ -42,9 +42,6 @@ map("n", "<leader>fm", "<cmd>Telescope marks theme=dropdown<CR>", {})
 -- Terminal
 map("n", "<C-t>", "<cmd>FloatermToggle<CR>", {})
 map("t", "<Esc>", "<C-\\><C-n>", {})
-
--- Terminal
-map("n", "<C-t>", "<cmd>FloatermToggle<CR>", {})
 
 -- VIM Table Mode
 map("n", "<leader>tm", ":TableModeToggle<CR>", {})

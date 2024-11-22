@@ -1,3 +1,4 @@
+require 'nvim-treesitter.install'.compilers = { "clang" }
 require('lualine').setup()
 require('Comment').setup()
 require('fidget').setup()

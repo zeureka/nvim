@@ -1,7 +1,12 @@
+-- 设置treesitter 编译器为clang
+if vim.loop.os_uname().sysname == "Windows_NT" then
+    require 'nvim-treesitter.install'.compilers = { "clang" }
+end
+
 require'nvim-treesitter.configs'.setup {
-  -- ensure_installed = { "c", "lua", "rust", "python", "typescript", "cpp", "javascript" },
+  ensure_installed = { "c", "lua", "python", "typescript", "cpp", "javascript", "java" },
   sync_install = false,
-  auto_install = false,
+  auto_install = true,
   highlight = {
     enable = true,
     disable = function(lang, buf)
